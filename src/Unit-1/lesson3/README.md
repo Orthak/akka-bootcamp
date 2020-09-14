@@ -88,7 +88,7 @@ Think of [`Props`](http://api.getakka.net/docs/stable/html/CA4B795B.htm "Akka.NE
 
 Right now, `Props` probably feels like overkill. (If so, no worries.) But here's the deal.
 
-The most basic `Props`, like we've seen, seem to only include the ingredients needed to make an actor—it's class and required args to its constructor.
+The most basic `Props`, like we've seen, seem to only include the ingredients needed to make an actor—its class and required args to its constructor.
 
 BUT, what you haven't seen yet is that `Props` get extended to contain deployment information and other configuration details that are needed to do remote work. For example, `Props` are serializable, so they can be used to remotely create and deploy entire groups of actors on another machine somewhere on the network!
 
@@ -108,14 +108,14 @@ There are 3 ways to properly create `Props`, and they all involve a call to `Pro
 
   While it looks simple, **we recommend that you do not use this approach.** Why? *Because it has no type safety and can easily introduce bugs where everything compiles fine, and then blows up at runtime*.
 
-1. **The lambda syntax**:
+2. **The lambda syntax**:
   ```csharp
   Props props2 = Props.Create(() => new MyActor(..), "...");
   ```
 
   This is a mighty fine syntax, and our favorite. You can pass in the arguments required by the constructor of your actor class inline, along with a name.
 
-1. **The generic syntax**:
+3. **The generic syntax**:
   ```csharp
   Props props3 = Props.Create<MyActor>();
   ```
@@ -230,7 +230,7 @@ static void Main(string[] args)
     consoleReaderActor.Tell(ConsoleReaderActor.StartCommand);
 
     // blocks the main thread from exiting until the actor system is shut down
-    MyActorSystem.AwaitTermination();
+    MyActorSystem.WhenTerminated.Wait();
 }
 ```
 

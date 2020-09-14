@@ -1,7 +1,5 @@
 # Akka.NET Bootcamp - Unit 3: Advanced Akka.NET
 
-![Akka.NET logo](../../images/akka_net_logo.png)
-
 In **[Unit 1](../Unit-1/README.md)**, we learned some of the fundamentals of Akka.NET and the actor model.
 
 In **[Unit 2](../Unit-2/README.md)** we learned some of the more sophisticated concepts behind Akka.NET, such as pattern matching, basic Akka.NET configuration, scheduled messages, and more!
@@ -47,7 +45,8 @@ If you have any questions about Octokit or want to learn more about it, make sur
 ## Things you'll need
 **You will need to make a GitHub OAuth access token for the API**.
 
-This will be a throwaway token in your account only used for this app. [Follow the instructions here](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) and write down your OAuth token.
+This will be a throwaway token in your account only used for this app. [Follow the instructions here](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) and write down your OAuth token. When you create your access token, you can select repo as your scope. This scope will be all you need for this project.  
+![GitHub OAuth Scope settings page](../../images/OAuth_Scope.png)
 
 When you run the samples and are actually pulling data from GitHub, you will get two popup windows:
 1. The first popup window will ask you for your GitHub token. This is the read-only access token that you just created.
